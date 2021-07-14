@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,200;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: #96b5dc;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .text{
+        position: absolute;
+        right: 35%;
+        top: 25%;
+        width: 0;
+        height: 150px;
+        background: #fff;
+        transition: .2s ease;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        padding: 20px;
+        border-radius: 35px 0 0 35px;
+        h4{
+            margin-top: .5rem;
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #191919;
+        }
+
+        p{
+            color: #5f5f5f;
+            margin: .5rem 0;
+            font-weight: 500;
+        }
+    }
+
+    .img{
+        width: 400px;
+        height: 250px;
+        transition: .3s;
+        border-radius: 5px;
+
+        @media screen and (max-width: 500px) {
+            width: 320px;
+        }
+
+        &.one{
+            z-index: -1;
+            transform: translateX(200px);
+            clip-path: polygon(51% 0%, 66% 50%, 51% 100%, 0% 100%, 0 50%, 0 0);
+        
+            @media screen and (max-width: 500px) {
+                transform: translateX(160px);
+            }
+        
+        }
+        
+        &.two{
+            clip-path: polygon(100% 0, 100% 50%, 100% 100%,50% 100%,65% 50%,50% 0);
+            transform: translateX(-200px);
+
+            @media screen and (max-width: 500px) {
+                transform: translateX(-160px);
+            }
+        }
+    }
+   
+    &:hover .text{
+        width: 320px;
+    }
+    &:hover .one{
+        transform: translateX(175px);
+
+        @media screen and (max-width: 500px) {
+            transform: translateX(140px);
+        }
+    }
+    &:hover .two{
+        transform: translateX(-175px);
+
+        @media screen and (max-width: 500px) {
+            transform: translateX(-140px);
+        }
+    }
+}
